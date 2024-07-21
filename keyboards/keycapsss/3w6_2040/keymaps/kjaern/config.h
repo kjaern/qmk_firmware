@@ -21,6 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef TAPPING_TERM
 #define TAPPING_TERM 240
 #define RETRO_TAPPING
+#undef TAP_CODE_DELAY
+#define TAP_CODE_DELAY 150
 
 
 #undef MOUSEKEY_DELAY
