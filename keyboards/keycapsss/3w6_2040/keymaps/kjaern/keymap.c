@@ -15,7 +15,6 @@ enum layers {
     _NUM,
     _ADJUST,
 };
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     //  NOOB HERE, I need the docs link close by
@@ -43,9 +42,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SYM] = LAYOUT_split_3x5_3(
-        DK_EXLM,   DK_DQUO,  DK_HASH,  DK_CURR,  DK_PERC,                                DK_AMPR, DK_LBRC, DK_RBRC, KC_PPLS, DK_QUES,
-        XXXXXXX,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, XXXXXXX,
-        XXXXXXX,   DK_SLSH,  DK_PIPE,  DK_BSLS,  XXXXXXX,                                XXXXXXX, DK_LCBR, DK_RCBR, XXXXXXX, XXXXXXX,
+        DK_EXLM,   DK_DQUO,  DK_HASH,  DK_CURR,  DK_PERC,                                DK_AMPR, DK_LCBR, DK_RCBR, KC_PPLS, DK_QUES,
+        DK_QUOT,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, XXXXXXX,
+        XXXXXXX,   DK_SLSH,  DK_PIPE,  DK_BSLS,  XXXXXXX,                                XXXXXXX, DK_LBRC, DK_RBRC, XXXXXXX, XXXXXXX,
                                     XXXXXXX, XXXXXXX, XXXXXXX,                XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
