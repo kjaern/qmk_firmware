@@ -17,12 +17,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define TAPPING_FORCE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_FORCE_HOLD
 #undef TAPPING_TERM
 #define TAPPING_TERM 240
-//#define RETRO_TAPPING
-//#undef TAP_CODE_DELAY
-//#define TAP_CODE_DELAY 150
+#define RETRO_TAPPING
 
 
 #undef MOUSEKEY_DELAY
