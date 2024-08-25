@@ -16,6 +16,7 @@ enum layers {
     _ADJUST,
     _GAME,
 };
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     //  NOOB HERE, I need the docs link close by
