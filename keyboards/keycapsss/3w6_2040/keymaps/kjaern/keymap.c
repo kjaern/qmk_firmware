@@ -2,6 +2,7 @@
 // https://www.youtube.com/watch?v=8wZ8FRwOzhU
 // https://github.com/benvallack/34-QMK-Ferris-Sweep
 //
+//
 // also great resourse collection made by Folke:
 // https://github.com/folke/zmk-config
 
@@ -14,8 +15,9 @@ enum layers {
     _NAV,
     _NUM,
     _ADJUST,
-    _GAME,
+    /*_GAME,*/
 };
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     //  NOOB HERE, I need the docs link close by
@@ -25,13 +27,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //      OSM    One Shot Keys https://github.com/qmk/qmk_firmware/blob/master/docs/one_shot_keys.md
     //      MT     Mod-Taps      https://docs.qmk.fm/mod_tap#caveats
     //      MO   momentarily activates layer
-    //      LT  momentarily activates layer when held, and sends kc when tapped
+    //      LT  momentarily activates layer when held, and sends kc when tapped ~
 
     [_ALPHA] = LAYOUT_split_3x5_3(
         KC_Q,               KC_W,                 KC_E,                KC_R,                  KC_T,                        KC_Y,    KC_U,                  KC_I,                KC_O,                 KC_P, //MT(DK_ARNG,KC_P),
         MT(MOD_LGUI,KC_A),  MT(MOD_LALT,KC_S),    MT(MOD_LCTL,KC_D),   MT(MOD_LSFT, KC_F),    KC_G,                        KC_H,    MT(MOD_LSFT, KC_J),    MT(MOD_LCTL, KC_K),  MT(MOD_LALT,KC_L),    MT(MOD_RGUI,KC_ENT), // MT(DK_AE,KC_ENT),
         LT(_DANE,KC_Z),     KC_X,                 KC_C,                KC_V,                  KC_B,                        KC_N,    KC_M,                  KC_COMM,             KC_DOT,               KC_SLSH, //MT(DK_OSTR, KC_SLSH),
-                             LT(_ADJUST, KC_TAB), KC_SPC, LT(_NUM, KC_ESC),                MO(_SYM), LT(_NAV,KC_BSPC),   MT(_GAME)
+                             LT(_ADJUST, KC_TAB), KC_SPC, LT(_NUM, KC_ESC),                MO(_SYM), LT(_NAV,KC_BSPC),   LT(_NAV, KC_DEL)
     ),
 
     [_DANE] = LAYOUT_split_3x5_3(
@@ -43,8 +45,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM] = LAYOUT_split_3x5_3(
         DK_EXLM,   DK_DQUO,  DK_HASH,  DK_CURR,  DK_PERC,                                DK_AMPR, DK_LCBR, DK_RCBR, KC_PPLS, DK_QUES,
-        DK_QUOT,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, XXXXXXX,
-        XXXXXXX,   DK_SLSH,  DK_PIPE,  DK_BSLS,  XXXXXXX,                                XXXXXXX, DK_LBRC, DK_RBRC, XXXXXXX, XXXXXXX,
+        DK_QUOT,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, DK_CIRC,
+        XXXXXXX,   DK_SLSH,  DK_PIPE,  DK_BSLS,  XXXXXXX,                                XXXXXXX, DK_LBRC, DK_RBRC, XXXXXXX, DK_TILD,
                                     XXXXXXX, XXXXXXX, XXXXXXX,                XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
@@ -65,16 +67,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT_split_3x5_3(
         XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                                KC_HOME, KC_PGDN,    KC_PGUP, KC_END, KC_DEL,
         MT(MOD_LGUI,XXXXXXX), MT(MOD_LALT,KC_MPRV),  KC_MSTP,  KC_MPLY, KC_MNXT,                              XXXXXXX, KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP, XXXXXXX,XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                KC_CAPS_LOCK, KC_APP,LALT(KC_PRINT_SCREEN), LGUI(LCTL(LSFT(KC_PRINT_SCREEN))), KC_PRINT_SCREEN,
+        KC_WWW_HOME, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                KC_CAPS_LOCK, KC_APP,LALT(KC_PRINT_SCREEN), LGUI(LCTL(LSFT(KC_PRINT_SCREEN))), KC_PRINT_SCREEN,
                                     XXXXXXX, XXXXXXX, OSM(MOD_LSFT),                XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
-    [_GAME] = LAYOUT_split_3x5_3(
-        KC_Q,  KC_W,  KC_E,   KC_R,    KC_T,                        KC_Y,    KC_U,  KC_I,       KC_O,    KC_P, //MT(DK_ARNG,KC_P),
-        KC_A,  KC_S,  KC_D,   KC_F,    KC_G,                        KC_H,    KC_J,  KC_K,       KC_L,    KC_ENT, // MT(DK_AE,KC_ENT),
-        KC_Z,  KC_X,  KC_C,   KC_V,    KC_B,                        KC_N,    KC_M,  KC_COMM,    KC_DOT,  KC_SLSH, //MT(DK_OSTR, KC_SLSH),
-                                    XXXXXXX, KC_SPC, XXXXXXX,                XXXXXXX, MT(_ALPHA), XXXXXXX
-    )
+    /*[_GAME] = LAYOUT_split_3x5_3(*/
+    /*    KC_Q,  KC_W,  KC_E,   KC_R,    KC_T,                        KC_Y,    KC_U,  KC_I,       KC_O,    KC_P, //MT(DK_ARNG,KC_P),*/
+    /*    KC_A,  KC_S,  KC_D,   KC_F,    KC_G,                        KC_H,    KC_J,  KC_K,       KC_L,    KC_ENT, // MT(DK_AE,KC_ENT),*/
+    /*    KC_Z,  KC_X,  KC_C,   KC_V,    KC_B,                        KC_N,    KC_M,  KC_COMM,    KC_DOT,  KC_SLSH, //MT(DK_OSTR, KC_SLSH),*/
+    /*                                XXXXXXX, KC_SPC, XXXXXXX,                XXXXXXX, MT(_ALPHA), XXXXXXX*/
+    /*)*/
     /*[_GAME] = LAYOUT_split_3x5_3(*/
     /*    XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX,                                XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,*/
     /*    KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,                                XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,*/
