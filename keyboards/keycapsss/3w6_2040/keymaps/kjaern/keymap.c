@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,               KC_W,                 KC_E,                KC_R,                  KC_T,                        KC_Y,    KC_U,                  KC_I,                KC_O,                 KC_P, //MT(DK_ARNG,KC_P),
         MT(MOD_LGUI,KC_A),  MT(MOD_LALT,KC_S),    MT(MOD_LCTL,KC_D),   MT(MOD_LSFT, KC_F),    KC_G,                        KC_H,    MT(MOD_LSFT, KC_J),    MT(MOD_LCTL, KC_K),  MT(MOD_LALT,KC_L),    MT(MOD_RGUI,DK_AE), // MT(DK_AE,KC_ENT),
         LT(_DANE,KC_Z),     KC_X,                 KC_C,                KC_V,                  KC_B,                        KC_N,    KC_M,                  KC_COMM,             KC_DOT,               KC_SLSH, //MT(DK_OSTR, KC_SLSH),
-                             LT(_ADJUST, KC_TAB), KC_SPC, LT(_NUM, KC_ESC),                LT(_SYM,KC_BSPC), LT(_NAV,KC_ENT),   LT(_NAV, KC_DEL)
+                             LT(_ADJUST, KC_TAB), KC_SPC, LT(_NUM, KC_ESC),                LT(_SYM,KC_ENT), LT(_NAV,KC_BSPC),   LT(_NAV, KC_DEL)
     ),
 
     [_DANE] = LAYOUT_split_3x5_3(
@@ -61,9 +61,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_P7,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                                         KC_PSLS,    KC_7,  KC_8,  KC_9, XXXXXXX,
         KC_P3,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                                         KC_PAST,    KC_4,  KC_5,  KC_6, DK_EQL,
         KC_P1,  KC_F1,  KC_F2,  KC_F3,  KC_F12,                                         KC_0,       KC_1,  KC_2,  KC_3, KC_PPLS,
-                                            KC_TAB, KC_SPC, KC_ESC,                KC_BSPC, KC_ENT,  KC_DEL
+                                            KC_TAB, KC_SPC, KC_ESC,                KC_ENT, KC_BSPC,  KC_DEL
     ),
-
     [_ADJUST] = LAYOUT_split_3x5_3(
         XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                                KC_HOME, KC_PGDN,    KC_PGUP, KC_END, KC_DEL,
         MT(MOD_LGUI,XXXXXXX), MT(MOD_LALT,KC_MPRV),  KC_MSTP,  KC_MPLY, KC_MNXT,                              XXXXXXX, KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP, XXXXXXX,XXXXXXX,
@@ -72,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /*[_GAME] = LAYOUT_split_3x5_3(*/
-    /*    KC_Q,  KC_W,  KC_E,   KC_R,    KC_T,                        KC_Y,    KC_U,  KC_I,       KC_O,    KC_P, //MT(DK_ARNG,KC_P),*/
+    /*    K,  KC_W,  KC_E,   KC_R,    KC_T,                        KC_Y,    KC_U,  KC_I,       KC_O,    KC_P, //MT(DK_ARNG,KC_P),*/
     /*    KC_A,  KC_S,  KC_D,   KC_F,    KC_G,                        KC_H,    KC_J,  KC_K,       KC_L,    KC_ENT, // MT(DK_AE,KC_ENT),*/
     /*    KC_Z,  KC_X,  KC_C,   KC_V,    KC_B,                        KC_N,    KC_M,  KC_COMM,    KC_DOT,  KC_SLSH, //MT(DK_OSTR, KC_SLSH),*/
     /*                                XXXXXXX, KC_SPC, XXXXXXX,                XXXXXXX, MT(_ALPHA), XXXXXXX*/
