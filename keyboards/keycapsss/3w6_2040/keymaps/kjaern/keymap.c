@@ -6,6 +6,11 @@
 // also great resourse collection made by Folke:
 // https://github.com/folke/zmk-config
 
+// // strategies: (https://youtu.be/dg2TT1OJlQs?si=F65zSeE0pRMy-Fo9&t=878)
+// thumb keys switch layers
+// thumb keys as modifiers
+// enter and backspace
+
 #include QMK_KEYBOARD_H
 #include "keymap_danish.h"
 enum layers {
@@ -36,13 +41,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              LT(_ADJUST, KC_TAB), KC_SPC, LT(_NUM, KC_ESC),                LT(_SYM,KC_ENT), LT(_NAV,KC_BSPC),   LT(_NAV, KC_DEL)
     ),
 
-    [_DANE] = LAYOUT_split_3x5_3(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,               XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DK_ARNG,
-        XXXXXXX, XXXXXXX, XXXXXXX, MT(MOD_LSFT, XXXXXXX), XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DK_OSTR,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,               XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                    XXXXXXX, XXXXXXX, XXXXXXX,                XXXXXXX, XXXXXXX, XXXXXXX
-    ),
-
     [_SYM] = LAYOUT_split_3x5_3(
         DK_EXLM,   DK_DQUO,  DK_HASH,  DK_CURR,  DK_PERC,                                DK_AMPR, DK_LCBR, DK_RCBR, KC_PPLS, DK_QUES,
         DK_QUOT,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, DK_CIRC,
@@ -61,8 +59,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_P7,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                                         KC_PSLS,    KC_7,  KC_8,  KC_9, XXXXXXX,
         KC_P3,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                                         KC_PAST,    KC_4,  KC_5,  KC_6, DK_EQL,
         KC_P1,  KC_F1,  KC_F2,  KC_F3,  KC_F12,                                         KC_0,       KC_1,  KC_2,  KC_3, KC_PPLS,
-                                            KC_TAB, KC_SPC, KC_ESC,                KC_ENT, KC_BSPC,  KC_DEL
+                                            KC_TAB, KC_SPC, KC_ESC,                KC_ENT, KC_BSPC,  KC_0
     ),
+
+    [_DANE] = LAYOUT_split_3x5_3(
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,               XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DK_ARNG,
+        XXXXXXX, XXXXXXX, XXXXXXX, MT(MOD_LSFT, XXXXXXX), XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DK_OSTR,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,               XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                    XXXXXXX, XXXXXXX, XXXXXXX,                XXXXXXX, XXXXXXX, XXXXXXX
+    ),
+
     [_ADJUST] = LAYOUT_split_3x5_3(
         XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                                KC_HOME, KC_PGDN,    KC_PGUP, KC_END, KC_DEL,
         MT(MOD_LGUI,XXXXXXX), MT(MOD_LALT,KC_MPRV),  KC_MSTP,  KC_MPLY, KC_MNXT,                              XXXXXXX, KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP, XXXXXXX,XXXXXXX,
