@@ -15,8 +15,13 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*#pragma once*/
+#pragma once
 
+/*#define IGNORE_MOD_TAP_INTERRUPT*/
+#define TAPPING_FORCE_HOLD
+#undef TAPPING_TERM
+#define TAPPING_TERM 200
+#define RETRO_TAPPING
 
 /*//#define TAPPING_FORCE_HOLD*/
 /*#undef TAPPING_TERM*/
