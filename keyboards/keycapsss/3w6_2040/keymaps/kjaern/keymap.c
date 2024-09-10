@@ -16,7 +16,8 @@
 #include "keymap_danish.h"
 enum layers {
     _ALPHA = 0,
-    _ONESHOT,
+    _ALPHA2,
+    _LAYERSW,
     _DANE,
     _SYM,
     _NAV,
@@ -40,8 +41,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ALPHA] = LAYOUT_split_3x5_3(
         KC_Q,               KC_W,                 KC_E,                KC_R,                  KC_T,                        KC_Y,    KC_U,                  KC_I,                KC_O,                 KC_P, //MT(DK_ARNG,KC_P),
         MT(MOD_LGUI,KC_A),  MT(MOD_LALT,KC_S),    MT(MOD_LCTL,KC_D),   MT(MOD_LSFT, KC_F),    KC_G,                        KC_H,    MT(MOD_LSFT, KC_J),    MT(MOD_LCTL, KC_K),  MT(MOD_LALT,KC_L),    MT(MOD_RGUI,DK_AE), // MT(DK_AE,KC_ENT),
-        LT(_DANE,KC_Z),     KC_X,                 LT(_SYM,KC_C),       LT(_NUM,KC_V),         LT(_NUM2, KC_B),                        KC_N,    KC_M,                  KC_COMM,             KC_DOT,               KC_SLSH, //MT(DK_OSTR, KC_SLSH),
-                             LT(_ADJUST, KC_TAB), KC_SPC, OSM(MOD_LSFT),                LT(_SYM,KC_ENT), LT(_NAV,KC_BSPC),   LT(_NAV, KC_DEL)
+        LT(_DANE,KC_Z),     LT(_NAV, KC_X),       LT(_SYM,KC_C),       LT(_NUM,KC_V),         LT(_NUM2, KC_B),             KC_N,    LT(_NUM,KC_M),                  LT(_SYM,KC_COMM),             LT(_NAV,KC_DOT),               KC_SLSH, //MT(DK_OSTR, KC_SLSH),
+                             LT(_ADJUST, KC_TAB), KC_SPC, OSM(MOD_LSFT),                MO(_LAYERSW), KC_BSPC,    KC_DEL
+    ),
+
+    [_ALPHA2] = LAYOUT_split_3x5_3(
+        KC_Q,  KC_W,    KC_E,   KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, //MT(DK_ARNG,KC_P),
+        KC_A,  KC_S,    KC_D,   KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    DK_AE,
+        KC_Z,  KC_X,    KC_C,   KC_V,    KC_B,                        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, //MT(DK_OSTR, KC_SLSH),
+                             LT(_ADJUST, KC_TAB), KC_SPC, OSM(MOD_LSFT),                MO(_LAYERSW), KC_BSPC,    KC_DEL
+    ),
+
+    [_LAYERSW] = LAYOUT_split_3x5_3(
+        DK_EXLM,   DK_DQUO,  DK_HASH,  DK_CURR,  DK_PERC,                                DK_AMPR, DK_LCBR, DK_RCBR, KC_PPLS, DK_QUES,
+        DK_QUOT,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, KC_ENT,
+        DK_SLSH,  DK_PIPE,  DK_BSLS,  TO(_ALPHA),   TO(_ALPHA2),                         XXXXXXX, DK_LBRC, DK_RBRC, DK_CIRC, DK_TILD,
+                                    XXXXXXX, XXXXXXX, KC_ESC,                XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     [_SYM] = LAYOUT_split_3x5_3(
@@ -59,17 +74,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NUM] = LAYOUT_split_3x5_3(
-        KC_P7,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                                         KC_PSLS,    KC_7,  KC_8,  KC_9, XXXXXXX,
-        KC_P3,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                                         KC_PAST,    KC_4,  KC_5,  KC_6, DK_EQL,
-        KC_P1,  KC_F1,  KC_F2,  KC_F3,  KC_F12,                                         KC_0,       MT(KC_P1,KC_1),  KC_2,  KC_3, KC_PPLS,
-                                            KC_TAB, KC_SPC, KC_ESC,                KC_ENT, KC_BSPC,  KC_0
+        KC_P7,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                                         KC_PSLS,    KC_7,  KC_8,  KC_9, DK_EQL,
+        KC_P3,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                                         KC_PAST,    KC_4,  KC_5,  KC_6, KC_PPLS,
+        KC_P1,  KC_F1,  KC_F2,  KC_F3,  KC_F12,                                         KC_0,       MT(KC_P1,KC_1),  KC_2,  KC_3, KC_DOT,
+                                            KC_TAB, KC_SPC, KC_ESC,                KC_ENT, KC_BSPC,  KC_COMM
     ),
 
     [_NUM2] = LAYOUT_split_3x5_3(
-        KC_P7,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                                         KC_PSLS,    KC_P7,  KC_P8,  KC_P9, XXXXXXX,
-        KC_P3,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                                         KC_PAST,    KC_P4,  KC_P5,  KC_P6, DK_EQL,
-        KC_P1,  KC_F1,  KC_F2,  KC_F3,  KC_F12,                                         KC_P0,       KC_P1,  KC_P2,  KC_P3, KC_PPLS,
-                                            KC_TAB, KC_SPC, KC_ESC,                KC_ENT, KC_BSPC,  KC_0
+        KC_P7,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                                         KC_PSLS,    KC_P7,  KC_P8,  KC_P9, DK_EQL,
+        KC_P3,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                                         KC_PAST,    KC_P4,  KC_P5,  KC_P6, KC_PPLS,
+        KC_P1,  KC_F1,  KC_F2,  KC_F3,  KC_F12,                                         KC_P0,       KC_P1,  KC_P2,  KC_P3, KC_DOT,
+                                            KC_TAB, KC_SPC, KC_ESC,                KC_ENT, KC_BSPC,  KC_COMM
     ),
 
     [_DANE] = LAYOUT_split_3x5_3(
