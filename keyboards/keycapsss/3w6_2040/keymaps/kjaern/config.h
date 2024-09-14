@@ -17,11 +17,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+/*IGNORE_MOD_TAP_INTERRUPT is no longer necessary as it is now the default behavior of mod-tap keys*/
 /*#define IGNORE_MOD_TAP_INTERRUPT*/
-#define TAPPING_FORCE_HOLD
+
+/* https://docs.qmk.fm/ChangeLog/20230226#quick-tap-term */
+/*#define TAPPING_FORCE_HOLD*/
+
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
-#define RETRO_TAPPING
+
+/*Holding and releasing a dual-function key without pressing another key will result in nothing happening. With retro tapping enabled, releasing the key without pressing another will send the original keycode even if it is outside the tapping term.*/
+/*#define RETRO_TAPPING*/
 
 /*//#define TAPPING_FORCE_HOLD*/
 /*#undef TAPPING_TERM*/
