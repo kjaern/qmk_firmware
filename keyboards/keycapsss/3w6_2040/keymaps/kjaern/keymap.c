@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ALPHA] = LAYOUT_split_3x5_3(
         KC_Q,               KC_W,                 KC_E,                KC_R,                  KC_T,                        KC_Y,    KC_U,                  KC_I,                KC_O,                 KC_P, //MT(DK_ARNG,KC_P),
-        MT(MOD_LGUI,KC_A),  MT(MOD_LALT,KC_S),    MT(MOD_LCTL,KC_D),   MT(MOD_LSFT, KC_F),    KC_G,                        KC_H,    MT(MOD_RSFT, KC_J),    MT(MOD_RCTL, KC_K),  MT(MOD_RALT,KC_L),    MT(MOD_LGUI,DK_AE), // MT(DK_AE,KC_ENT),
+        MT(MOD_LGUI,KC_A),  MT(MOD_LALT,KC_S),    MT(MOD_LCTL,KC_D),   MT(MOD_LSFT, KC_F),    KC_G,                        KC_H,    MT(MOD_RSFT, KC_J),    MT(MOD_RCTL, KC_K),  MT(MOD_LALT,KC_L),    MT(MOD_LGUI,DK_AE), // MT(DK_AE,KC_ENT),
         LT(_DANE,KC_Z),     LT(_NAV, KC_X),       LT(_SYM,KC_C),       LT(_NUM,KC_V),         LT(_NUM2, KC_B),             KC_N,    LT(_NUM,KC_M),                  LT(_SYM,KC_COMM),             LT(_NAV,KC_DOT),               KC_SLSH, //MT(DK_OSTR, KC_SLSH),
                              LT(_ADJUST, KC_TAB), LT(_NAV,KC_SPC), OSM(MOD_LSFT),                MO(_LAYERSW), KC_BSPC,    KC_DEL
     ),
