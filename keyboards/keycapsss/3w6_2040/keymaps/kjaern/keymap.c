@@ -26,6 +26,7 @@ enum layers {
     _FUNC,
     _ADJUST,
     _GAME,
+    _MOUSE,
 };
 
 // Turn off lsp
@@ -44,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //      LT  momentarily activates layer when held, and sends kc when tapped ~
 
     [_ALPHA] = LAYOUT_split_3x5_3(
-        KC_Q,               KC_W,                 KC_E,                KC_R,                  KC_T,                        KC_Y,    KC_U,                  KC_I,                KC_O,                 KC_P, //MT(DK_ARNG,KC_P),
+        KC_Q,               KC_W,                 KC_E,                LT(_MOUSE,KC_R),                  KC_T,                        KC_Y,    KC_U,                  KC_I,                KC_O,                 KC_P, //MT(DK_ARNG,KC_P),
         MT(MOD_LGUI,KC_A),  MT(MOD_LALT,KC_S),    MT(MOD_LCTL,KC_D),   MT(MOD_LSFT, KC_F),    KC_G,                        KC_H,    MT(MOD_RSFT, KC_J),    MT(MOD_RCTL, KC_K),  MT(MOD_LALT,KC_L),    MT(MOD_LGUI,DK_AE), // MT(DK_AE,KC_ENT),kjaernkjaern
         LT(_DANE,KC_Z),     KC_X,                 KC_C,                LT(_NUM,KC_V),         LT(_NUM2, KC_B),             KC_N,    LT(_FUNC,KC_M),         KC_COMM,             LT(_NAV,KC_DOT),               KC_SLSH, //MT(DK_OSTR, KC_SLSH),
                              LT(_ADJUST, KC_TAB), LT(_NAV,KC_SPC), OSM(MOD_LSFT),             OSL(_LAYERSW), KC_BSPC,    KC_DEL
@@ -79,10 +80,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NAV] = LAYOUT_split_3x5_3(
-        KC_ESC,              QK_MOUSE_WHEEL_LEFT,  MS_UP,      QK_MOUSE_WHEEL_RIGHT, XXXXXXX,                   KC_HOME, KC_PGDN,    KC_PGUP, KC_END, KC_DEL,
-        MT(MOD_LGUI,XXXXXXX), MS_LEFT,     MS_DOWN,    MS_RGHT,    QK_MOUSE_WHEEL_UP,             KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
-        MS_ACL0,         MS_ACL1,   MS_ACL2,  QK_MOUSE_WHEEL_DOWN,  QK_MOUSE_WHEEL_DOWN,           XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX,
-                                    MS_BTN2, XXXXXXX, MS_BTN1,                XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                KC_HOME, KC_PGDN,    KC_PGUP, KC_END, KC_DEL,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX,
+                                    XXXXXXX, XXXXXXX, XXXXXXX,                 XXXXXXX, XXXXXXX, XXXXXXX
+    ),
+
+    [_MOUSE] = LAYOUT_split_3x5_3(
+        MS_ACL0, MS_ACL1, MS_ACL2, XXXXXXX, XXXXXXX,                            KC_ESC, QK_MOUSE_WHEEL_LEFT,   QK_MOUSE_WHEEL_RIGHT, XXXXXXX,XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            MS_LEFT,     MS_DOWN,  MS_UP,  MS_RGHT,    XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX,QK_MOUSE_WHEEL_DOWN, QK_MOUSE_WHEEL_UP,  XXXXXXX, XXXXXXX,
+                                    XXXXXXX, XXXXXXX, XXXXXXX,                MS_BTN1,  MS_BTN2, MS_BTN3
     ),
 
     [_FUNC] = LAYOUT_split_3x5_3(
