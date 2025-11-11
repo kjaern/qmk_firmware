@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM] = LAYOUT_split_3x5_3(
         DK_EXLM,   DK_DQUO,  DK_HASH,  DK_CURR,  DK_PERC,                                DK_AMPR, DK_LCBR, DK_RCBR, KC_PPLS, DK_QUES,
         DK_QUOT,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, DK_CIRC,
-        XXXXXXX,   DK_SLSH,  DK_PIPE,  DK_BSLS,  XXXXXXX,                                XXXXXXX, DK_LBRC, DK_RBRC, XXXXXXX, DK_TILD,
+        XXXXXXX,   DK_SLSH,  DK_PIPE,  DK_BSLS,  DK_MICR,                                DK_ACUT, DK_LBRC, DK_RBRC, DK_GRV, DK_TILD,
                                     XXXXXXX, XXXXXXX, KC_ESC,                XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MS_BTN4, MS_BTN5, MS_BTN6, XXXXXXX, XXXXXXX,                            XXXXXXX, QK_MOUSE_WHEEL_LEFT,   QK_MOUSE_WHEEL_RIGHT,  XXXXXXX, XXXXXXX,
                                     XXXXXXX, XXXXXXX, XXXXXXX,                MS_BTN1,  MS_BTN2, MS_BTN3
     ),
-
+||´´``´´||??``||||<´´``´´´´´`
     [_FUNC] = LAYOUT_split_3x5_3(
         KC_P7,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         KC_P3,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                                             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
