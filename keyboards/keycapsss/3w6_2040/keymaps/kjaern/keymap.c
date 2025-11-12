@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         DK_EXLM,   DK_DQUO,  DK_HASH,  DK_CURR,  DK_PERC,                                DK_AMPR, DK_LCBR, DK_RCBR, KC_PPLS, DK_QUES,
         DK_QUOT,   DK_AT,    DK_PND,   DK_DLR,   DK_EURO,                                DK_LABK, DK_LPRN, DK_RPRN, DK_RABK, KC_ENT,
         DK_GRV,    DK_SLSH,  DK_PIPE,  DK_BSLS,  DK_MICR,                             DK_ACUT, DK_LBRC, DK_RBRC, DK_CIRC, DK_TILD,
-                                    TO(_ALPHA), OSM(MOD_LGUI), KC_ESC,                XXXXXXX, TO(_ALPHA2), TO(_GAME)
+                                        TO(_ALPHA), OSM(MOD_LGUI), KC_ESC,                XXXXXXX, XXXXXXX, TO(_ALPHA2)
     ),
 
     [_SYM] = LAYOUT_split_3x5_3(
